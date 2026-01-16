@@ -1,0 +1,99 @@
+
+:root {
+	/* color variables */
+	--font-high-emphasis: #25282b;
+	--gray-3: #828282;
+	--gray-1: #333;
+	--bg-line: #25282b;
+
+	/* responsive margins / paddings */
+	--margin-sm: 16px;
+	--margin-md: 32px;
+}
+
+* {
+	--min-screen-size: 430;
+	--max-screen-size: 1512;
+	--interpolate-diff: calc(var(--max-font-size) - var(--min-font-size));
+	--interpolate: clamp(calc(var(--min-font-size) * 1px), calc((var(--min-font-size) * 1px) + var(--interpolate-diff) * ((100vw - calc(var(--min-screen-size) * 1px)) / (var(--max-screen-size) - var(--min-screen-size)))), calc(var(--max-font-size) * 1px));
+}
+
+html {
+	height: 100%;
+	font-size: 16px;
+}
+
+
+
+/* text utility classes */
+
+.title-h2 {
+	color: var(--font-high-emphasis);
+	font-size: 48px;
+	font-family: 'Playfair Display';
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.5;
+	letter-spacing: 0px;
+}
+
+.title-h1 {
+	color: var(--font-high-emphasis);
+	--min-font-size: 26; --max-font-size: 48; font-size: var(--interpolate);
+	font-family: 'Playfair Display';
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.5;
+	letter-spacing: 0px;
+}
+
+.italic {
+	font-style: italic;
+	font-weight: 400;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.sub-text {
+	font-weight: 400;
+}
+
+.bold-cyan {
+	color: #00b4d8;
+	font-weight: 700;
+}
+
+
+
+/* section utility classes */
+
+.section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 24px;
+}
+
+
+
+/* ui objects utility classes */
+
+.card {
+	width: 100px; height: 0;
+	border-top: 4px solid #00b4d8;
+	border-radius: 2px;
+}
+
+
+
+/* button hover utility classes */
+
+.hover-bright:hover {
+	filter: brightness(1.2);
+}
+
+.hover-zoom:hover {
+	scale: 1.05;
+}
